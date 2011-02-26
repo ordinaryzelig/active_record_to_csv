@@ -26,3 +26,9 @@ to_csv() returns the entire contents including the header ready to be written to
 == TODO
 
 Options to specify columns to be included (currently, id and timestamp columns are excluded).
+
+== Compatibility
+
+Tested with ActiveRecord v3.0.4
+
+http://gem-testers.org/gems/active_record_to_csv
