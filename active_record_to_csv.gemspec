@@ -9,8 +9,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Jared Ning"]
   s.email       = ["jared@redningja.com"]
   s.homepage    = "https://github.com/ordinaryzelig/active_record_to_csv"
-  s.summary     = %q{Simple ActiveRecordModel#to_csv class method that preserves scopes}
-  s.description = %q{Simple ActiveRecordModel#to_csv class method that preserves scopes}
+  s.summary     = %q{Simple ActiveRecordModel to_csv() class method that preserves scopes}
+  s.description = %q{Simple ActiveRecordModel to_csv() class method that preserves scopes}
 
   s.rubyforge_project = "active_record_to_csv"
 

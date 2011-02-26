@@ -1,0 +1,28 @@
+= ActiveRecord.to_csv
+
+== Description
+
+A simple ActiveRecord::Base to_csv() class method that preserves scopes.
+to_csv() returns the entire contents including the header ready to be written to file.
+
+== Usage
+
+  # Assuming a Movie model with title and director_id columns.
+  Movie.to_csv
+  # would return:
+  title,director_id
+  title,director_id
+  Black Swan,0
+  Inception,1
+  The Fighter,2
+  The King's Speech,3
+  The Kids Are All Right,4
+
+  Movie.bad.to_csv
+  # would return:
+  title,director_id
+  The Kids Are All Right,4
+
+== TODO
+
+Options to specify columns to be included (currently, id and timestamp columns are excluded).
