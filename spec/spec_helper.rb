@@ -1,5 +1,4 @@
 require 'pathname'
-require 'active_record'
 
 require File.join(Pathname(__FILE__).dirname.expand_path, '../lib/active_record_to_csv')
 

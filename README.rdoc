@@ -23,6 +23,12 @@ to_csv() returns the entire contents including the header ready to be written to
   title,director_id
   The Kids Are All Right,4
 
+Note that #to_csv is called like a scope or query. The following will NOT give you the same results:
+
+  Movie.all.to_csv
+
+This will use Ruby's Array#to_csv method.
+
 == TODO
 
 Options to specify columns to be included (currently, id and timestamp columns are excluded).
@@ -32,3 +38,8 @@ Options to specify columns to be included (currently, id and timestamp columns a
 Tested with ActiveRecord v3.0.4
 
 http://gem-testers.org/gems/active_record_to_csv
+
+== Related gems
+
+* https://github.com/ordinaryzelig/active_record_csv
+* https://github.com/ordinaryzelig/orm_from_csv
