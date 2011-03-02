@@ -35,9 +35,11 @@ After a model object's attributes are collected, to_csv is called on the resulti
 
   class Date
     def to_csv
-      strftime('%Y/%m/%d')
+      strftime('%Y-%m-%d')
     end
   end
+
+Note that object.send(attribute_name) is used, so datetime fields will be returned as ActiveSupport::TimeWithZone objects.
 
 == TODO
 
