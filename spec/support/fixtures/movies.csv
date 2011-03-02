@@ -1,6 +1,6 @@
-title,director_id
-Black Swan,0
-Inception,1
-The Fighter,2
-The King's Speech,3
-The Kids Are All Right,4
+title,director_id,released_on
+Black Swan,1,2010/01/01
+Inception,2,2010/01/02
+The Fighter,3,2010/01/03
+The King's Speech,4,2010/01/04
+The Kids Are All Right,5,2010/01/05

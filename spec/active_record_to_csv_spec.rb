@@ -10,7 +10,11 @@ describe ActiveRecordToCSV do
       "The King's Speech",
       'The Kids Are All Right'
     ].each_with_index do |title, i|
-      Movie.create! :title => title, :director_id => i
+      Movie.create!(
+        :title => title,
+        :director_id => i + 1,
+        :released_on => Date.new(2010, 1, i + 1)
+      )
     end
   end
 
@@ -23,7 +27,15 @@ describe ActiveRecordToCSV do
   end
 
   it 'should not include id and timestamp fields' do
-    Movie.to_csv.lines.first.should eq("title,director_id\n")
+    header = Movie.to_csv.lines.first
+    header.should_not =~ /^id|created_at|updated_at/
+  end
+
+  it 'should call to_csv on each attribute if it responds to it' do
+    date = Movie.limit(1).first.released_on
+    csv_string = Movie.limit(1).to_csv
+    csv_string.should include(date.to_csv)
+    csv_string.should_not include(date.to_s)
   end
 
 end

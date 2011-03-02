@@ -9,7 +9,9 @@ module ActiveRecordToCSV
     header_row = csv_columns.to_csv
     records_rows = all.map do |record|
       csv_columns.map do |column|
-        record[column]
+        value = record[column]
+        value = value.to_csv if value.respond_to?(:to_csv)
+        value
       end.to_csv
     end.join
     header_row + records_rows
@@ -27,4 +29,3 @@ class ActiveRecord::Relation
     end
   end
 end
-
